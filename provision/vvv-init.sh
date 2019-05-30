@@ -10,6 +10,7 @@ DB_NAME=`get_config_value 'db_name' "${VVV_SITE_NAME}"`
 GIT_REPO=`get_config_value 'site_repo' "NONE"`
 DB_NAME=${DB_NAME//[\\\/\.\<\>\:\"\'\|\?\!\*-]/}
 
+echo "Git repo '${GIT_REPO}'"
 # Make a database, if we don't already have one
 echo -e "\nCreating database '${DB_NAME}' (if it's not already there)"
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME}"
