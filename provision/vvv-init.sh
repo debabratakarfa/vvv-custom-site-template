@@ -28,7 +28,7 @@ if [ "${WP_TYPE}" != "none" ]; then
   if [[ ! -f "${VVV_PATH_TO_SITE}/public_html/wp-load.php" ]]; then
     if [ "${GIT_REPO}" != "none" ]; then
       echo "Setting up WordPress from Repo"
-      git clone GIT_REPO
+      git clone ${GIT_REPO}
     else
       echo "Downloading WordPress..."
       noroot wp core download --version="${WP_VERSION}"
